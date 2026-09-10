@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>365 Days Together ❤️</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #050208;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* =========================
+   MAIN SLIDER
+========================= */
+
+.slider {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.08);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.4s ease,
+        visibility 1.2s;
+
+    overflow: hidden;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+/* =========================
+   BACKGROUNDS
+========================= */
+
+.slide:nth-child(1) {
+    background:
+        radial-gradient(circle at 50% 40%, #7d183d 0%, transparent 35%),
+        linear-gradient(135deg, #030105, #170611);
+}
+
+.slide:nth-child(2) {
+    background:
+        radial-gradient(circle at 20% 30%, #711936, transparent 35%),
+        radial-gradient(circle at 80% 70%, #3e102b, transparent 40%),
+        #070309;
+}
+
+.slide:nth-child(3) {
+    background:
+        radial-gradient(circle at 50% 20%, #a12651, transparent 30%),
+        linear-gradient(145deg, #070208, #260a1a);
+}
+
+.slide:nth-child(4) {
+    background:
+        radial-gradient(circle at 50% 50%, #68153b, transparent 45%),
+        #060207;
+}
+
+.slide:nth-child(5) {
+    background:
+        radial-gradient(circle at 50% 50%, #9d244d, transparent 35%),
+        #080208;
+}
+
+
+/* =========================
+   CINEMATIC INTRO
+========================= */
+
+.intro {
+    position: absolute;
+    inset: 0;
+
+    background: #030105;
+
+    z-index: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity 2s ease, visibility 2s;
+}
+
+.intro.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-content {
+    text-align: center;
+    animation: introAppear 3s ease forwards;
+}
+
+.intro-small {
+    font-size: 12px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #d889a5;
+    margin-bottom: 30px;
+}
+
+.intro-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 10vw, 120px);
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+.intro-line {
+    width: 0;
+    height: 1px;
+    background: #d889a5;
+    margin: 35px auto;
+    animation: lineGrow 2s 1s forwards;
+}
+
+.intro-date {
+    opacity: 0;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #c87b96;
+    animation: fadeIn 2s 2s forwards;
+}
+
+@keyframes introAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineGrow {
+    to {
+        width: 180px;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.content {
+    max-width: 900px;
+    position: relative;
+    z-index: 5;
+}
+
+h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(60px, 10vw, 115px);
+}
+
+h2 {
+    font-size: clamp(45px, 7vw, 80px);
+    margin-bottom: 25px;
+}
+
+p {
+    color: #ead7df;
+    font-size: 17px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.kicker {
+    color: #d884a1;
+    font-size: 11px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.big-heart {
+    font-size: 80px;
+    display: inline-block;
+
+    animation: heartbeat 1.8s infinite;
+
+    filter:
+        drop-shadow(0 0 15px #ff3e78)
+        drop-shadow(0 0 35px #ff3e78);
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter-box {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.time {
+    min-width: 105px;
+    padding: 18px;
+
+    background: rgba(255,255,255,.04);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 15px;
+}
+
+.time-number {
+    display: block;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 38px;
+    color: #ffd6e3;
+}
+
+.time-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #a97889;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0;
+
+    margin-top: 50px;
+}
+
+.timeline-item {
+    width: 170px;
+    position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 20px;
+    left: 85px;
+
+    width: 170px;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        #bd5275,
+        transparent
+    );
+}
+
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #e66d93;
+
+    box-shadow:
+        0 0 10px #e66d93,
+        0 0 30px #e66d93;
+}
+
+.timeline-date {
+    margin-top: 20px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    color: #d885a0;
+}
+
+.timeline-title {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+    margin-top: 8px;
+}
+
+.timeline-text {
+    font-size: 12px;
+    line-height: 1.7;
+
+    margin-top: 8px;
+
+    color: #bdaab2;
+}
+
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter {
+    margin: 35px auto 0;
+
+    max-width: 650px;
+
+    padding: 35px;
+
+    background: rgba(255,255,255,.045);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 50px rgba(255, 45, 110, .08);
+}
+
+.letter p {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 23px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-question {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(45px, 8vw, 85px);
+
+    margin-top: 30px;
+
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+
+    from {
+        text-shadow:
+            0 0 10px rgba(255,100,150,.2);
+    }
+
+    to {
+        text-shadow:
+            0 0 25px rgba(255,100,150,.6),
+            0 0 60px rgba(255,100,150,.25);
+    }
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+    position: fixed;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    z-index: 1000;
+}
+
+.nav-btn {
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-family: 'Montserrat';
+
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    background: #a83258;
+
+    transform: translateY(-3px);
+}
+
+.slide-number {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #bd8296;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-btn {
+    position: fixed;
+
+    top: 25px;
+    left: 25px;
+
+    z-index: 1000;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.07);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+.music-btn.playing {
+    animation: musicPulse 1s infinite;
+}
+
+@keyframes musicPulse {
+
+    50% {
+        box-shadow:
+            0 0 20px rgba(255,70,130,.5);
+    }
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particle {
+    position: fixed;
+
+    bottom: -30px;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    opacity: 0;
+
+    animation: particleFloat linear forwards;
+}
+
+@keyframes particleFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 700px) {
+
+    .timeline {
+        transform: scale(.75);
+    }
+
+    .timeline-item {
+        width: 110px;
+    }
+
+    .timeline-item:not(:last-child)::after {
+        width: 110px;
+        left: 55px;
+    }
+
+    .counter-box {
+        gap: 10px;
+    }
+
+    .time {
+        min-width: 75px;
+        padding: 12px;
+    }
+
+    .time-number {
+        font-size: 28px;
+    }
+
+    .letter {
+        padding: 22px;
+    }
+
+    .letter p {
+        font-size: 19px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     CINEMATIC INTRO
+========================= -->
+
+<div class="intro" id="intro">
+
+```
+<div class="intro-content">
+
+    <div class="intro-small">
+        A story about us
+    </div>
+
+    <div class="intro-title">
+        One Year
+    </div>
+
+    <div class="intro-line"></div>
+
+    <div class="intro-date">
+        AND COUNTING...
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicBtn">
+    ♫
+</button>
+
+<!-- =========================
+     SLIDES
+========================= -->
+
+<div class="slider">
+
+<!-- SLIDE 1 -->
+
+<section class="slide active">
+
+```
+<div class="content">
+
+    <div class="big-heart">
+        ❤️
+    </div>
+
+    <div class="kicker">
+        September 12th, 2025 — September 12th, 2026
+    </div>
+
+    <h1>
+        One Year<br>
+        With You
+    </h1>
+
+    <p>
+        Somehow, a whole year passed,
+        yet my heart still skips a beat knowing
+        you're mine.
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- SLIDE 2 -->
+
+<section class="slide">
+
+```
+<div class="content">
+
+    <div class="kicker">
+        Every second mattered
+    </div>
+
+    <h2>
+        Our Time Together
+    </h2>
+
+    <p>
+        And this is only counting the time
+        we've already had.
+    </p>
+
+
+    <div class="counter-box">
+
+        <div class="time">
+            <span class="time-number" id="days">0</span>
+            <span class="time-label">DAYS</span>
+        </div>
+
+        <div class="time">
+            <span class="time-number" id="hours">0</span>
+            <span class="time-label">HOURS</span>
+        </div>
+
+        <div class="time">
+            <span class="time-number" id="minutes">0</span>
+            <span class="time-label">MINUTES</span>
+        </div>
+
+        <div class="time">
+            <span class="time-number" id="seconds">0</span>
+            <span class="time-label">SECONDS</span>
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- SLIDE 3 -->
+
+<section class="slide">
+
+```
+<div class="content">
+
+    <div class="kicker">
+        Our Story
+    </div>
+
+    <h2>
+        How We Got Here
+    </h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-date">
+                12TH SEPTEMBER, 2025
+            </div>
+
+            <div class="timeline-title">
+                The Beginning
+            </div>
+
+            <div class="timeline-text">
+                The day we exchanged
+                texts.
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-date">
+                21st OCTOBER, 2025
+            </div>
+
+            <div class="timeline-title">
+                The Confession
+            </div>
+
+            <div class="timeline-text">
+                The day that started
+                it all.
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-date">
+                31ST MARCH, 2026
+            </div>
+
+            <div class="timeline-title">
+                My Wifey's day
+            </div>
+
+            <div class="timeline-text">
+                A birthday of memories,
+                laughter and love.
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-date">
+                TODAY
+            </div>
+
+            <div class="timeline-title">
+                One Year
+            </div>
+
+            <div class="timeline-text">
+                And somehow,
+                you're still the warmth I crave.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- SLIDE 4 -->
+
+<section class="slide">
+
+```
+<div class="content">
+
+    <div class="big-heart">
+        💗
+    </div>
+
+    <div class="kicker">
+        A little something for you
+    </div>
+
+    <h2>
+        If I Could Tell You...
+    </h2>
+
+    <div class="letter">
+
+        <p>
+            Thank you for being there through
+            every laugh, every random conversation,
+            every sunny day and every cloudy one.
+            <br><br>
+
+            You coloured my soul in a way that
+            It seems like it belongs to you.
+            <br><br>
+
+            I can't imagine this fragnance without
+            its smell. its Mahak. 
+            <br><br>
+
+            I love you.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- SLIDE 5 -->
+
+<section class="slide">
+
+```
+<div class="content">
+
+    <div class="big-heart">
+        💞
+    </div>
+
+    <div class="kicker">
+        And now...
+    </div>
+
+    <h2>
+        One Year Down.
+    </h2>
+
+    <p>
+        Lets have our souls embrace eachother.
+        Have our bodies be one,
+        and our hearts indifferentiable.
+    </p>
+
+    <div class="final-question">
+        Will you stay with this vegetable<br>
+        forever?
+    </div>
+
+    <p style="margin-top:30px;">
+        Happy 1 Year Anniversary Mahak ❤️
+    </p>
+
+</div>
+```
+
+</section>
+
+</div>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<div class="navigation">
+
+```
+<button class="nav-btn" onclick="previousSlide()">
+    ←
+</button>
+
+<div class="slide-number">
+    <span id="slideNumber">01</span> / 05
+</div>
+
+<button class="nav-btn" onclick="nextSlide()">
+    →
+</button>
+```
+
+</div>
+
+<script>
+
+/* =========================
+   SLIDES
+========================= */
+
+let currentSlide = 0;
+
+const slides =
+    document.querySelectorAll(".slide");
+
+const slideNumber =
+    document.getElementById("slideNumber");
+
+
+function showSlide(index) {
+
+    if(index >= slides.length)
+        index = 0;
+
+    if(index < 0)
+        index = slides.length - 1;
+
+    currentSlide = index;
+
+    slides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    slides[currentSlide]
+        .classList.add("active");
+
+    slideNumber.textContent =
+        String(currentSlide + 1)
+        .padStart(2, "0");
+}
+
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+
+function previousSlide() {
+    showSlide(currentSlide - 1);
+}
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+document.addEventListener("keydown", event => {
+
+    if(event.key === "ArrowRight")
+        nextSlide();
+
+    if(event.key === "ArrowLeft")
+        previousSlide();
+
+});
+
+
+/* =========================
+   SWIPE
+========================= */
+
+let touchStartX = 0;
+
+document.addEventListener("touchstart", e => {
+
+    touchStartX =
+        e.changedTouches[0].screenX;
+
+});
+
+document.addEventListener("touchend", e => {
+
+    const touchEndX =
+        e.changedTouches[0].screenX;
+
+    const difference =
+        touchStartX - touchEndX;
+
+    if(Math.abs(difference) > 50) {
+
+        if(difference > 0)
+            nextSlide();
+
+        else
+            previousSlide();
+    }
+
+});
+
+// =========================
+// ANNIVERSARY COUNTER
+// =========================
+
+// September 12, 2025 at 12:00 AM
+const anniversaryDate = new Date(2025, 8, 12, 0, 0, 0);
+
+function updateCounter() {
+
+    const now = new Date();
+
+    const difference = now.getTime() - anniversaryDate.getTime();
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const hours = Math.floor(
+        (totalSeconds % 86400) / 3600
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+    );
+
+    const seconds = totalSeconds % 60;
+
+    document.getElementById("days").textContent = days;
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+updateCounter();
+
+setInterval(updateCounter, 1000);
+
+
+/* =========================
+   MUSIC
+========================= */
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+let playing = false;
+
+
+musicBtn.addEventListener("click", () => {
+
+    if(!playing) {
+
+        music.play()
+            .then(() => {
+
+                playing = true;
+
+                musicBtn.classList
+                    .add("playing");
+
+                musicBtn.textContent = "♫";
+
+            })
+            .catch(() => {
+
+                alert(
+                    "Add a file named music.mp3 beside index.html."
+                );
+
+            });
+
+    } else {
+
+        music.pause();
+
+        playing = false;
+
+        musicBtn.classList
+            .remove("playing");
+
+        musicBtn.textContent = "♪";
+    }
+
+});
+
+
+/* =========================
+   CINEMATIC INTRO
+========================= */
+
+setTimeout(() => {
+
+    document.getElementById("intro")
+        .classList.add("hidden");
+
+}, 5000);
+
+
+/* =========================
+   FLOATING PARTICLES
+========================= */
+
+function createParticle() {
+
+    const particle =
+        document.createElement("div");
+
+    particle.className =
+        "particle";
+
+    const symbols = [
+        "♡",
+        "♥",
+        "✦",
+        "·",
+        "✧"
+    ];
+
+    particle.textContent =
+        symbols[
+            Math.floor(
+                Math.random() * symbols.length
+            )
+        ];
+
+    particle.style.left =
+        Math.random() * 100 + "vw";
+
+    particle.style.fontSize =
+        (10 + Math.random() * 20) + "px";
+
+    particle.style.animationDuration =
+        (6 + Math.random() * 8) + "s";
+
+    document.body.appendChild(particle);
+
+    setTimeout(() => {
+
+        particle.remove();
+
+    }, 15000);
+
+}
+
+
+setInterval(createParticle, 450);
+
+
+/* =========================
+   AUTO SLIDESHOW
+========================= */
+
+/*
+   Automatically moves to the
+   next slide every 15 seconds.
+*/
+
+let autoSlide =
+    setInterval(nextSlide, 15000);
+
+
+/*
+   Reset automatic timer when
+   the user manually navigates.
+*/
+
+function resetAutoSlide() {
+
+    clearInterval(autoSlide);
+
+    autoSlide =
+        setInterval(nextSlide, 15000);
+}
+
+
+const originalNext = nextSlide;
+
+nextSlide = function() {
+
+    originalNext();
+
+    resetAutoSlide();
+
+};
+
+
+const originalPrevious = previousSlide;
+
+previousSlide = function() {
+
+    originalPrevious();
+
+    resetAutoSlide();
+
+};
+
+</script>
+
+</body>
+</html>
